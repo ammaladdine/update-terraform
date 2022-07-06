@@ -5,11 +5,11 @@
   "lineage": "7e48c24b-f25c-4589-571f-42432852fbbc",
   "outputs": {
     "config_map_aws_auth": {
-      "value": "\n\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: aws-auth\n  namespace: kube-system\ndata:\n  mapRoles: |\n    - rolearn: arn:aws:iam::093471887101:role/terraform-eks-percipient-citizen-node\n      username: system:node:{{EC2PrivateDNSName}}\n      groups:\n        - system:bootstrappers\n        - system:nodes\n",
+      "value": "\n\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: aws-auth\n  namespace: kube-system\ndata:\n  mapRoles: |\n    - rolearn: arn:aws:iam::093471887101:role/terraform-eks-sandbox-bastion-node\n      username: system:node:{{EC2PrivateDNSName}}\n      groups:\n        - system:bootstrappers\n        - system:nodes\n",
       "type": "string"
     },
     "kubeconfig": {
-      "value": "\n\napiVersion: v1\nclusters:\n- cluster:\n    server: https://06D9073B45E4C67920A495259EDEA909.gr7.us-east-1.eks.amazonaws.com\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1ESXhNakEwTURBek9Wb1hEVE15TURJeE1EQTBNREF6T1Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT1hrCkQzVUF1cnV2aVNnUVpQNGladVczQWQ4bjRwME1wZ2JuSHo0SkJ4emlEQlhJdFRCYnVmOGRmVVg2YkVLNzQ0azMKR0RVNkxkTGZMMnd1ZFQzYlhBSzhjM1lCeUxVSGtreis4Sko1RnVCQmhqMjNaYVAvZCtOMVlvYmZsYktMbHVyeQo4M3I3QU1zeVBDSnVLclB3VmZ4WENpS1VzUk1valQzTksvSmNLMXh5UkpvcmVxWjEvVkdPakdPMmJwcHhDVUJPCjdISm9SRS9zdEdlQURwWUsvdXBDZFR0Rm01UnVsZ1ZoMnR4RDZEbmw1dC92Q2h4YVlSZE9PWEl0SUlDcTRVdzMKQThBZmlkVzg0ZGlobDVMY2V1dEE1TGJaSGM0YmpCVTNIZWpZT1B3OExrWEhlenBjdkltdG9WMHdRQjltTVZuagpaQXlQekV0VmFpZ25oMkdXMTlNQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZLNmFERk41TUx6U1N0aDY3RVBvM1E5UE44Wk5NQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDK04zcWJKNVBGdkkwdFBEdVJyNHBMdmI4N0QxSHZWRjl6c3JIR3ZtdEM4L25PMVVqRApaaC9Qb2RNUzZVbkJXRTlWNU5wYzFNSkRteXc3Y1JPd2RVWGRyMGxZWHlIUXVjbzh6ZXhCMFVQUmJtRVZJL1FZCjIyRE1aSkUvUGt4dU1DQ3IvaDFyRjhKd21SV29sa0ZZb3I0NktNaWFFQmRSODRTR2s3QkJWOWhmUGxUbDBDL3IKa1JCNlRPZ0VMT05qVTBRL0toaEkyajdPMUhONGwrY01CNkJPb3g5bGdMMzF3Y3FWaVVxZHo3WGpnRnZKN0hWMApGU2NqeCtMUGNvWjVqdjIwd0IvZGFTeDlnL3ZxR280Y3MzeDhhTVFyRHVlWk5GQWpVRUlsMktsdCtIUzVuZlNPCmVuUDUxZHhtZnVIVTBtN2RFbGJTV1cvam9WUFovZTZ6R3poKwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n  name: kubernetes\ncontexts:\n- context:\n    cluster: kubernetes\n    user: aws\n  name: aws\ncurrent-context: aws\nkind: Config\npreferences: {}\nusers:\n- name: aws\n  user:\n    exec:\n      apiVersion: client.authentication.k8s.io/v1alpha1\n      command: aws-iam-authenticator\n      args:\n        - \"token\"\n        - \"-i\"\n        - \"eks-percipient-citizen\"\n",
+      "value": "\n\napiVersion: v1\nclusters:\n- cluster:\n    server: https://06D9073B45E4C67920A495259EDEA909.gr7.us-east-1.eks.amazonaws.com\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1ESXhNakEwTURBek9Wb1hEVE15TURJeE1EQTBNREF6T1Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT1hrCkQzVUF1cnV2aVNnUVpQNGladVczQWQ4bjRwME1wZ2JuSHo0SkJ4emlEQlhJdFRCYnVmOGRmVVg2YkVLNzQ0azMKR0RVNkxkTGZMMnd1ZFQzYlhBSzhjM1lCeUxVSGtreis4Sko1RnVCQmhqMjNaYVAvZCtOMVlvYmZsYktMbHVyeQo4M3I3QU1zeVBDSnVLclB3VmZ4WENpS1VzUk1valQzTksvSmNLMXh5UkpvcmVxWjEvVkdPakdPMmJwcHhDVUJPCjdISm9SRS9zdEdlQURwWUsvdXBDZFR0Rm01UnVsZ1ZoMnR4RDZEbmw1dC92Q2h4YVlSZE9PWEl0SUlDcTRVdzMKQThBZmlkVzg0ZGlobDVMY2V1dEE1TGJaSGM0YmpCVTNIZWpZT1B3OExrWEhlenBjdkltdG9WMHdRQjltTVZuagpaQXlQekV0VmFpZ25oMkdXMTlNQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZLNmFERk41TUx6U1N0aDY3RVBvM1E5UE44Wk5NQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDK04zcWJKNVBGdkkwdFBEdVJyNHBMdmI4N0QxSHZWRjl6c3JIR3ZtdEM4L25PMVVqRApaaC9Qb2RNUzZVbkJXRTlWNU5wYzFNSkRteXc3Y1JPd2RVWGRyMGxZWHlIUXVjbzh6ZXhCMFVQUmJtRVZJL1FZCjIyRE1aSkUvUGt4dU1DQ3IvaDFyRjhKd21SV29sa0ZZb3I0NktNaWFFQmRSODRTR2s3QkJWOWhmUGxUbDBDL3IKa1JCNlRPZ0VMT05qVTBRL0toaEkyajdPMUhONGwrY01CNkJPb3g5bGdMMzF3Y3FWaVVxZHo3WGpnRnZKN0hWMApGU2NqeCtMUGNvWjVqdjIwd0IvZGFTeDlnL3ZxR280Y3MzeDhhTVFyRHVlWk5GQWpVRUlsMktsdCtIUzVuZlNPCmVuUDUxZHhtZnVIVTBtN2RFbGJTV1cvam9WUFovZTZ6R3poKwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n  name: kubernetes\ncontexts:\n- context:\n    cluster: kubernetes\n    user: aws\n  name: aws\ncurrent-context: aws\nkind: Config\npreferences: {}\nusers:\n- name: aws\n  user:\n    exec:\n      apiVersion: client.authentication.k8s.io/v1alpha1\n      command: aws-iam-authenticator\n      args:\n        - \"token\"\n        - \"-i\"\n        - \"eks-sandbox-bastion\"\n",
       "type": "string"
     }
   },
@@ -87,13 +87,13 @@
     {
       "mode": "managed",
       "type": "aws_eks_cluster",
-      "name": "percipient-citizen",
+      "name": "sandbox-bastion",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:eks:us-east-1:093471887101:cluster/eks-percipient-citizen",
+            "arn": "arn:aws:eks:us-east-1:093471887101:cluster/eks-sandbox-bastion",
             "certificate_authority": [
               {
                 "data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1ESXhNakEwTURBek9Wb1hEVE15TURJeE1EQTBNREF6T1Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT1hrCkQzVUF1cnV2aVNnUVpQNGladVczQWQ4bjRwME1wZ2JuSHo0SkJ4emlEQlhJdFRCYnVmOGRmVVg2YkVLNzQ0azMKR0RVNkxkTGZMMnd1ZFQzYlhBSzhjM1lCeUxVSGtreis4Sko1RnVCQmhqMjNaYVAvZCtOMVlvYmZsYktMbHVyeQo4M3I3QU1zeVBDSnVLclB3VmZ4WENpS1VzUk1valQzTksvSmNLMXh5UkpvcmVxWjEvVkdPakdPMmJwcHhDVUJPCjdISm9SRS9zdEdlQURwWUsvdXBDZFR0Rm01UnVsZ1ZoMnR4RDZEbmw1dC92Q2h4YVlSZE9PWEl0SUlDcTRVdzMKQThBZmlkVzg0ZGlobDVMY2V1dEE1TGJaSGM0YmpCVTNIZWpZT1B3OExrWEhlenBjdkltdG9WMHdRQjltTVZuagpaQXlQekV0VmFpZ25oMkdXMTlNQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZLNmFERk41TUx6U1N0aDY3RVBvM1E5UE44Wk5NQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDK04zcWJKNVBGdkkwdFBEdVJyNHBMdmI4N0QxSHZWRjl6c3JIR3ZtdEM4L25PMVVqRApaaC9Qb2RNUzZVbkJXRTlWNU5wYzFNSkRteXc3Y1JPd2RVWGRyMGxZWHlIUXVjbzh6ZXhCMFVQUmJtRVZJL1FZCjIyRE1aSkUvUGt4dU1DQ3IvaDFyRjhKd21SV29sa0ZZb3I0NktNaWFFQmRSODRTR2s3QkJWOWhmUGxUbDBDL3IKa1JCNlRPZ0VMT05qVTBRL0toaEkyajdPMUhONGwrY01CNkJPb3g5bGdMMzF3Y3FWaVVxZHo3WGpnRnZKN0hWMApGU2NqeCtMUGNvWjVqdjIwd0IvZGFTeDlnL3ZxR280Y3MzeDhhTVFyRHVlWk5GQWpVRUlsMktsdCtIUzVuZlNPCmVuUDUxZHhtZnVIVTBtN2RFbGJTV1cvam9WUFovZTZ6R3poKwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
@@ -103,7 +103,7 @@
             "enabled_cluster_log_types": null,
             "encryption_config": [],
             "endpoint": "https://06D9073B45E4C67920A495259EDEA909.gr7.us-east-1.eks.amazonaws.com",
-            "id": "eks-percipient-citizen",
+            "id": "eks-sandbox-bastion",
             "identity": [
               {
                 "oidc": [
@@ -119,9 +119,9 @@
                 "service_ipv4_cidr": "172.20.0.0/16"
               }
             ],
-            "name": "eks-percipient-citizen",
+            "name": "eks-sandbox-bastion",
             "platform_version": "eks.4",
-            "role_arn": "arn:aws:iam::093471887101:role/terraform-eks-percipient-citizen-cluster",
+            "role_arn": "arn:aws:iam::093471887101:role/terraform-eks-sandbox-bastion-cluster",
             "status": "ACTIVE",
             "tags": null,
             "tags_all": {},
@@ -149,12 +149,12 @@
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfX0=",
           "dependencies": [
-            "aws_iam_role.percipient-citizen-cluster",
-            "aws_iam_role_policy_attachment.percipient-citizen-cluster-AmazonEKSClusterPolicy",
-            "aws_iam_role_policy_attachment.percipient-citizen-cluster-AmazonEKSVPCResourceController",
-            "aws_security_group.percipient-citizen-cluster",
-            "aws_subnet.percipient-citizen",
-            "aws_vpc.percipient-citizen",
+            "aws_iam_role.sandbox-bastion-cluster",
+            "aws_iam_role_policy_attachment.sandbox-bastion-cluster-AmazonEKSClusterPolicy",
+            "aws_iam_role_policy_attachment.sandbox-bastion-cluster-AmazonEKSVPCResourceController",
+            "aws_security_group.sandbox-bastion-cluster",
+            "aws_subnet.sandbox-bastion",
+            "aws_vpc.sandbox-bastion",
             "data.aws_availability_zones.available"
           ]
         }
@@ -163,34 +163,34 @@
     {
       "mode": "managed",
       "type": "aws_eks_node_group",
-      "name": "percipient-citizen",
+      "name": "sandbox-bastion",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
             "ami_type": "AL2_x86_64",
-            "arn": "arn:aws:eks:us-east-1:093471887101:nodegroup/eks-percipient-citizen/percipient-citizen/d2bf760e-1ad3-d810-88a7-4fa119352887",
+            "arn": "arn:aws:eks:us-east-1:093471887101:nodegroup/eks-sandbox-bastion/sandbox-bastion/d2bf760e-1ad3-d810-88a7-4fa119352887",
             "capacity_type": "ON_DEMAND",
-            "cluster_name": "eks-percipient-citizen",
+            "cluster_name": "eks-sandbox-bastion",
             "disk_size": 20,
             "force_update_version": null,
-            "id": "eks-percipient-citizen:percipient-citizen",
+            "id": "eks-sandbox-bastion:sandbox-bastion",
             "instance_types": [
               "t3.medium"
             ],
             "labels": null,
             "launch_template": [],
-            "node_group_name": "percipient-citizen",
+            "node_group_name": "sandbox-bastion",
             "node_group_name_prefix": "",
-            "node_role_arn": "arn:aws:iam::093471887101:role/terraform-eks-percipient-citizen-node",
+            "node_role_arn": "arn:aws:iam::093471887101:role/terraform-eks-sandbox-bastion-node",
             "release_version": "1.21.5-20220123",
             "remote_access": [],
             "resources": [
               {
                 "autoscaling_groups": [
                   {
-                    "name": "eks-percipient-citizen-d2bf760e-1ad3-d810-88a7-4fa119352887"
+                    "name": "eks-sandbox-bastion-d2bf760e-1ad3-d810-88a7-4fa119352887"
                   }
                 ],
                 "remote_access_security_group_id": ""
@@ -223,17 +223,17 @@
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInVwZGF0ZSI6MzYwMDAwMDAwMDAwMH19",
           "dependencies": [
-            "aws_eks_cluster.percipient-citizen",
-            "aws_iam_role.percipient-citizen-cluster",
-            "aws_iam_role.percipient-citizen-node",
-            "aws_iam_role_policy_attachment.percipient-citizen-cluster-AmazonEKSClusterPolicy",
-            "aws_iam_role_policy_attachment.percipient-citizen-cluster-AmazonEKSVPCResourceController",
-            "aws_iam_role_policy_attachment.percipient-citizen-node-AmazonEC2ContainerRegistryReadOnly",
-            "aws_iam_role_policy_attachment.percipient-citizen-node-AmazonEKSWorkerNodePolicy",
-            "aws_iam_role_policy_attachment.percipient-citizen-node-AmazonEKS_CNI_Policy",
-            "aws_security_group.percipient-citizen-cluster",
-            "aws_subnet.percipient-citizen",
-            "aws_vpc.percipient-citizen",
+            "aws_eks_cluster.sandbox-bastion",
+            "aws_iam_role.sandbox-bastion-cluster",
+            "aws_iam_role.sandbox-bastion-node",
+            "aws_iam_role_policy_attachment.sandbox-bastion-cluster-AmazonEKSClusterPolicy",
+            "aws_iam_role_policy_attachment.sandbox-bastion-cluster-AmazonEKSVPCResourceController",
+            "aws_iam_role_policy_attachment.sandbox-bastion-node-AmazonEC2ContainerRegistryReadOnly",
+            "aws_iam_role_policy_attachment.sandbox-bastion-node-AmazonEKSWorkerNodePolicy",
+            "aws_iam_role_policy_attachment.sandbox-bastion-node-AmazonEKS_CNI_Policy",
+            "aws_security_group.sandbox-bastion-cluster",
+            "aws_subnet.sandbox-bastion",
+            "aws_vpc.sandbox-bastion",
             "data.aws_availability_zones.available"
           ]
         }
@@ -242,18 +242,18 @@
     {
       "mode": "managed",
       "type": "aws_iam_role",
-      "name": "percipient-citizen-cluster",
+      "name": "sandbox-bastion-cluster",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:iam::093471887101:role/terraform-eks-percipient-citizen-cluster",
+            "arn": "arn:aws:iam::093471887101:role/terraform-eks-sandbox-bastion-cluster",
             "assume_role_policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"eks.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
             "create_date": "2022-02-12T03:53:11Z",
             "description": "",
             "force_detach_policies": false,
-            "id": "terraform-eks-percipient-citizen-cluster",
+            "id": "terraform-eks-sandbox-bastion-cluster",
             "inline_policy": [
               {
                 "name": "",
@@ -262,7 +262,7 @@
             ],
             "managed_policy_arns": [],
             "max_session_duration": 3600,
-            "name": "terraform-eks-percipient-citizen-cluster",
+            "name": "terraform-eks-sandbox-bastion-cluster",
             "name_prefix": "",
             "path": "/",
             "permissions_boundary": null,
@@ -278,18 +278,18 @@
     {
       "mode": "managed",
       "type": "aws_iam_role",
-      "name": "percipient-citizen-node",
+      "name": "sandbox-bastion-node",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "arn": "arn:aws:iam::093471887101:role/terraform-eks-percipient-citizen-node",
+            "arn": "arn:aws:iam::093471887101:role/terraform-eks-sandbox-bastion-node",
             "assume_role_policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
             "create_date": "2022-02-12T03:53:11Z",
             "description": "",
             "force_detach_policies": false,
-            "id": "terraform-eks-percipient-citizen-node",
+            "id": "terraform-eks-sandbox-bastion-node",
             "inline_policy": [
               {
                 "name": "",
@@ -298,7 +298,7 @@
             ],
             "managed_policy_arns": [],
             "max_session_duration": 3600,
-            "name": "terraform-eks-percipient-citizen-node",
+            "name": "terraform-eks-sandbox-bastion-node",
             "name_prefix": "",
             "path": "/",
             "permissions_boundary": null,
@@ -314,20 +314,20 @@
     {
       "mode": "managed",
       "type": "aws_iam_role_policy_attachment",
-      "name": "percipient-citizen-cluster-AmazonEKSClusterPolicy",
+      "name": "sandbox-bastion-cluster-AmazonEKSClusterPolicy",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "id": "terraform-eks-percipient-citizen-cluster-20220212035311966400000004",
+            "id": "terraform-eks-sandbox-bastion-cluster-20220212035311966400000004",
             "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
-            "role": "terraform-eks-percipient-citizen-cluster"
+            "role": "terraform-eks-sandbox-bastion-cluster"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "aws_iam_role.percipient-citizen-cluster"
+            "aws_iam_role.sandbox-bastion-cluster"
           ]
         }
       ]
@@ -335,20 +335,20 @@
     {
       "mode": "managed",
       "type": "aws_iam_role_policy_attachment",
-      "name": "percipient-citizen-cluster-AmazonEKSVPCResourceController",
+      "name": "sandbox-bastion-cluster-AmazonEKSVPCResourceController",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "id": "terraform-eks-percipient-citizen-cluster-20220212035311967000000005",
+            "id": "terraform-eks-sandbox-bastion-cluster-20220212035311967000000005",
             "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController",
-            "role": "terraform-eks-percipient-citizen-cluster"
+            "role": "terraform-eks-sandbox-bastion-cluster"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "aws_iam_role.percipient-citizen-cluster"
+            "aws_iam_role.sandbox-bastion-cluster"
           ]
         }
       ]
@@ -356,20 +356,20 @@
     {
       "mode": "managed",
       "type": "aws_iam_role_policy_attachment",
-      "name": "percipient-citizen-node-AmazonEC2ContainerRegistryReadOnly",
+      "name": "sandbox-bastion-node-AmazonEC2ContainerRegistryReadOnly",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "id": "terraform-eks-percipient-citizen-node-20220212035311947400000001",
+            "id": "terraform-eks-sandbox-bastion-node-20220212035311947400000001",
             "policy_arn": "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
-            "role": "terraform-eks-percipient-citizen-node"
+            "role": "terraform-eks-sandbox-bastion-node"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "aws_iam_role.percipient-citizen-node"
+            "aws_iam_role.sandbox-bastion-node"
           ]
         }
       ]
@@ -377,20 +377,20 @@
     {
       "mode": "managed",
       "type": "aws_iam_role_policy_attachment",
-      "name": "percipient-citizen-node-AmazonEKSWorkerNodePolicy",
+      "name": "sandbox-bastion-node-AmazonEKSWorkerNodePolicy",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "id": "terraform-eks-percipient-citizen-node-20220212035311952300000003",
+            "id": "terraform-eks-sandbox-bastion-node-20220212035311952300000003",
             "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
-            "role": "terraform-eks-percipient-citizen-node"
+            "role": "terraform-eks-sandbox-bastion-node"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "aws_iam_role.percipient-citizen-node"
+            "aws_iam_role.sandbox-bastion-node"
           ]
         }
       ]
@@ -398,20 +398,20 @@
     {
       "mode": "managed",
       "type": "aws_iam_role_policy_attachment",
-      "name": "percipient-citizen-node-AmazonEKS_CNI_Policy",
+      "name": "sandbox-bastion-node-AmazonEKS_CNI_Policy",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "id": "terraform-eks-percipient-citizen-node-20220212035311951900000002",
+            "id": "terraform-eks-sandbox-bastion-node-20220212035311951900000002",
             "policy_arn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
-            "role": "terraform-eks-percipient-citizen-node"
+            "role": "terraform-eks-sandbox-bastion-node"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "aws_iam_role.percipient-citizen-node"
+            "aws_iam_role.sandbox-bastion-node"
           ]
         }
       ]
@@ -419,7 +419,7 @@
     {
       "mode": "managed",
       "type": "aws_internet_gateway",
-      "name": "percipient-citizen",
+      "name": "sandbox-bastion",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
@@ -429,17 +429,17 @@
             "id": "igw-0dcb527f79ca86953",
             "owner_id": "093471887101",
             "tags": {
-              "Name": "terraform-eks-percipient-citizen"
+              "Name": "terraform-eks-sandbox-bastion"
             },
             "tags_all": {
-              "Name": "terraform-eks-percipient-citizen"
+              "Name": "terraform-eks-sandbox-bastion"
             },
             "vpc_id": "vpc-097ee13ee3b0f1fac"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "aws_vpc.percipient-citizen"
+            "aws_vpc.sandbox-bastion"
           ]
         }
       ]
@@ -447,7 +447,7 @@
     {
       "mode": "managed",
       "type": "aws_route_table",
-      "name": "percipient-citizen",
+      "name": "sandbox-bastion",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
@@ -482,8 +482,8 @@
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
           "dependencies": [
-            "aws_internet_gateway.percipient-citizen",
-            "aws_vpc.percipient-citizen"
+            "aws_internet_gateway.sandbox-bastion",
+            "aws_vpc.sandbox-bastion"
           ]
         }
       ]
@@ -491,7 +491,7 @@
     {
       "mode": "managed",
       "type": "aws_route_table_association",
-      "name": "percipient-citizen",
+      "name": "sandbox-bastion",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
@@ -506,10 +506,10 @@
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "aws_internet_gateway.percipient-citizen",
-            "aws_route_table.percipient-citizen",
-            "aws_subnet.percipient-citizen",
-            "aws_vpc.percipient-citizen",
+            "aws_internet_gateway.sandbox-bastion",
+            "aws_route_table.sandbox-bastion",
+            "aws_subnet.sandbox-bastion",
+            "aws_vpc.sandbox-bastion",
             "data.aws_availability_zones.available"
           ]
         },
@@ -525,10 +525,10 @@
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "aws_internet_gateway.percipient-citizen",
-            "aws_route_table.percipient-citizen",
-            "aws_subnet.percipient-citizen",
-            "aws_vpc.percipient-citizen",
+            "aws_internet_gateway.sandbox-bastion",
+            "aws_route_table.sandbox-bastion",
+            "aws_subnet.sandbox-bastion",
+            "aws_vpc.sandbox-bastion",
             "data.aws_availability_zones.available"
           ]
         }
@@ -537,7 +537,7 @@
     {
       "mode": "managed",
       "type": "aws_security_group",
-      "name": "percipient-citizen-cluster",
+      "name": "sandbox-bastion-cluster",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
@@ -562,15 +562,15 @@
             ],
             "id": "sg-0f05e47a9525b204d",
             "ingress": [],
-            "name": "terraform-eks-percipient-citizen-cluster",
+            "name": "terraform-eks-sandbox-bastion-cluster",
             "name_prefix": "",
             "owner_id": "093471887101",
             "revoke_rules_on_delete": false,
             "tags": {
-              "Name": "terraform-eks-percipient-citizen"
+              "Name": "terraform-eks-sandbox-bastion"
             },
             "tags_all": {
-              "Name": "terraform-eks-percipient-citizen"
+              "Name": "terraform-eks-sandbox-bastion"
             },
             "timeouts": null,
             "vpc_id": "vpc-097ee13ee3b0f1fac"
@@ -578,7 +578,7 @@
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
           "dependencies": [
-            "aws_vpc.percipient-citizen"
+            "aws_vpc.sandbox-bastion"
           ]
         }
       ]
@@ -586,7 +586,7 @@
     {
       "mode": "managed",
       "type": "aws_security_group_rule",
-      "name": "percipient-citizen-cluster-ingress-workstation-https",
+      "name": "sandbox-bastion-cluster-ingress-workstation-https",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
@@ -610,8 +610,8 @@
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
           "dependencies": [
-            "aws_security_group.percipient-citizen-cluster",
-            "aws_vpc.percipient-citizen",
+            "aws_security_group.sandbox-bastion-cluster",
+            "aws_vpc.sandbox-bastion",
             "data.http.workstation-external-ip"
           ]
         }
@@ -620,7 +620,7 @@
     {
       "mode": "managed",
       "type": "aws_subnet",
-      "name": "percipient-citizen",
+      "name": "sandbox-bastion",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
@@ -646,12 +646,12 @@
             "owner_id": "093471887101",
             "private_dns_hostname_type_on_launch": "ip-name",
             "tags": {
-              "Name": "terraform-eks-percipient-citizen-node",
-              "kubernetes.io/cluster/eks-percipient-citizen": "shared"
+              "Name": "terraform-eks-sandbox-bastion-node",
+              "kubernetes.io/cluster/eks-sandbox-bastion": "shared"
             },
             "tags_all": {
-              "Name": "terraform-eks-percipient-citizen-node",
-              "kubernetes.io/cluster/eks-percipient-citizen": "shared"
+              "Name": "terraform-eks-sandbox-bastion-node",
+              "kubernetes.io/cluster/eks-sandbox-bastion": "shared"
             },
             "timeouts": null,
             "vpc_id": "vpc-097ee13ee3b0f1fac"
@@ -659,7 +659,7 @@
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
           "dependencies": [
-            "aws_vpc.percipient-citizen",
+            "aws_vpc.sandbox-bastion",
             "data.aws_availability_zones.available"
           ]
         },
@@ -686,12 +686,12 @@
             "owner_id": "093471887101",
             "private_dns_hostname_type_on_launch": "ip-name",
             "tags": {
-              "Name": "terraform-eks-percipient-citizen-node",
-              "kubernetes.io/cluster/eks-percipient-citizen": "shared"
+              "Name": "terraform-eks-sandbox-bastion-node",
+              "kubernetes.io/cluster/eks-sandbox-bastion": "shared"
             },
             "tags_all": {
-              "Name": "terraform-eks-percipient-citizen-node",
-              "kubernetes.io/cluster/eks-percipient-citizen": "shared"
+              "Name": "terraform-eks-sandbox-bastion-node",
+              "kubernetes.io/cluster/eks-sandbox-bastion": "shared"
             },
             "timeouts": null,
             "vpc_id": "vpc-097ee13ee3b0f1fac"
@@ -699,7 +699,7 @@
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
           "dependencies": [
-            "aws_vpc.percipient-citizen",
+            "aws_vpc.sandbox-bastion",
             "data.aws_availability_zones.available"
           ]
         }
@@ -708,7 +708,7 @@
     {
       "mode": "managed",
       "type": "aws_vpc",
-      "name": "percipient-citizen",
+      "name": "sandbox-bastion",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
         {
@@ -737,12 +737,12 @@
             "main_route_table_id": "rtb-0686d845d7061b4fc",
             "owner_id": "093471887101",
             "tags": {
-              "Name": "terraform-eks-percipient-citizen-node",
-              "kubernetes.io/cluster/eks-percipient-citizen": "shared"
+              "Name": "terraform-eks-sandbox-bastion-node",
+              "kubernetes.io/cluster/eks-sandbox-bastion": "shared"
             },
             "tags_all": {
-              "Name": "terraform-eks-percipient-citizen-node",
-              "kubernetes.io/cluster/eks-percipient-citizen": "shared"
+              "Name": "terraform-eks-sandbox-bastion-node",
+              "kubernetes.io/cluster/eks-sandbox-bastion": "shared"
             }
           },
           "sensitive_attributes": [],

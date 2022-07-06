@@ -3,6 +3,6 @@ variable "aws_region" {
 }
 
 variable "cluster-name" {
-  default = "eks-percipient-citizen"
+  default = "eks-sandbox-bastion"
   type    = string
 }

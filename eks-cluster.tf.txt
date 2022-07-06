@@ -5,8 +5,8 @@
 #  * EKS Cluster
 #
 
-resource "aws_iam_role" "percipient-citizen-cluster" {
-  name = "terraform-eks-percipient-citizen-cluster"
+resource "aws_iam_role" "sandbox-bastion-cluster" {
+  name = "terraform-eks-sandbox-bastion-cluster"
 
   assume_role_policy = <<POLICY
 {
@@ -24,20 +24,20 @@ resource "aws_iam_role" "percipient-citizen-cluster" {
 POLICY
 }
 
-resource "aws_iam_role_policy_attachment" "percipient-citizen-cluster-AmazonEKSClusterPolicy" {
+resource "aws_iam_role_policy_attachment" "sandbox-bastion-cluster-AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.percipient-citizen-cluster.name
+  role       = aws_iam_role.sandbox-bastion-cluster.name
 }
 
-resource "aws_iam_role_policy_attachment" "percipient-citizen-cluster-AmazonEKSVPCResourceController" {
+resource "aws_iam_role_policy_attachment" "sandbox-bastion-cluster-AmazonEKSVPCResourceController" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
-  role       = aws_iam_role.percipient-citizen-cluster.name
+  role       = aws_iam_role.sandbox-bastion-cluster.name
 }
 
-resource "aws_security_group" "percipient-citizen-cluster" {
-  name        = "terraform-eks-percipient-citizen-cluster"
+resource "aws_security_group" "sandbox-bastion-cluster" {
+  name        = "terraform-eks-sandbox-bastion-cluster"
   description = "Cluster communication with worker nodes"
-  vpc_id      = aws_vpc.percipient-citizen.id
+  vpc_id      = aws_vpc.sandbox-bastion.id
 
   egress {
     from_port   = 0
@@ -47,31 +47,31 @@ resource "aws_security_group" "percipient-citizen-cluster" {
   }
 
   tags = {
-    Name = "terraform-eks-percipient-citizen"
+    Name = "terraform-eks-sandbox-bastion"
   }
 }
 
-resource "aws_security_group_rule" "percipient-citizen-cluster-ingress-workstation-https" {
+resource "aws_security_group_rule" "sandbox-bastion-cluster-ingress-workstation-https" {
   cidr_blocks       = [local.workstation-external-cidr]
   description       = "Allow workstation to communicate with the cluster API Server"
   from_port         = 443
   protocol          = "tcp"
-  security_group_id = aws_security_group.percipient-citizen-cluster.id
+  security_group_id = aws_security_group.sandbox-bastion-cluster.id
   to_port           = 443
   type              = "ingress"
 }
 
-resource "aws_eks_cluster" "percipient-citizen" {
+resource "aws_eks_cluster" "sandbox-bastion" {
   name     = var.cluster-name
-  role_arn = aws_iam_role.percipient-citizen-cluster.arn
+  role_arn = aws_iam_role.sandbox-bastion-cluster.arn
 
   vpc_config {
-    security_group_ids = [aws_security_group.percipient-citizen-cluster.id]
-    subnet_ids         = aws_subnet.percipient-citizen[*].id
+    security_group_ids = [aws_security_group.sandbox-bastion-cluster.id]
+    subnet_ids         = aws_subnet.sandbox-bastion[*].id
   }
 
   depends_on = [
-    aws_iam_role_policy_attachment.percipient-citizen-cluster-AmazonEKSClusterPolicy,
-    aws_iam_role_policy_attachment.percipient-citizen-cluster-AmazonEKSVPCResourceController,
+    aws_iam_role_policy_attachment.sandbox-bastion-cluster-AmazonEKSClusterPolicy,
+    aws_iam_role_policy_attachment.sandbox-bastion-cluster-AmazonEKSVPCResourceController,
   ]
 }

@@ -13,7 +13,7 @@ metadata:
   namespace: kube-system
 data:
   mapRoles: |
-    - rolearn: ${aws_iam_role.percipient-citizen-node.arn}
+    - rolearn: ${aws_iam_role.sandbox-bastion-node.arn}
       username: system:node:{{EC2PrivateDNSName}}
       groups:
         - system:bootstrappers
@@ -26,8 +26,8 @@ CONFIGMAPAWSAUTH
 apiVersion: v1
 clusters:
 - cluster:
-    server: ${aws_eks_cluster.percipient-citizen.endpoint}
-    certificate-authority-data: ${aws_eks_cluster.percipient-citizen.certificate_authority[0].data}
+    server: ${aws_eks_cluster.sandbox-bastion.endpoint}
+    certificate-authority-data: ${aws_eks_cluster.sandbox-bastion.certificate_authority[0].data}
   name: kubernetes
 contexts:
 - context:
